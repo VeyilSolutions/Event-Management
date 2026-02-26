@@ -1,0 +1,241 @@
+/* ===============================
+   1. CORE DESIGN SYSTEM (ROOT)
+================================= */
+:root {
+  /* Backgrounds */
+  --bg-dark: #0f0f14;
+  --bg-darker: #0b0b0f;
+  
+  /* Glassmorphism & Cards */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --blur: blur(12px);
+  
+  /* Brand Colors */
+  --primary: #8a79ab;
+  --primary-light: #c8b6ff;
+  --primary-hover: #7666a0;
+  
+  /* Text */
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  
+  /* Gradients & Effects */
+  --grad-main: linear-gradient(90deg, var(--primary), var(--primary-light));
+  --grad-surface: radial-gradient(circle at top right, #1c1c2e, var(--bg-dark));
+  --shadow-glow: 0 10px 30px rgba(138, 121, 171, 0.2);
+  
+  /* Layout */
+  --radius: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.3s ease;
+}
+
+
+/* ===============================
+   2. GLOBAL RESET & TYPOGRAPHY
+================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
+
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 70px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Reusable Header Style */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 700;
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   3. UNIFIED COMPONENTS (CARDS & BUTTONS)
+================================= */
+/* Unified Glass Card Base */
+.service-card, .info-card, .connect-card, .contact-form, .testimonial-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  backdrop-filter: var(--blur);
+  transition: var(--transition);
+}
+
+/* Shared Hover Effect */
+.service-card:hover, .info-card:hover, .connect-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Unified Buttons */
+.btn-primary, .contact-form button {
+  background: var(--grad-main);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-primary:hover, .contact-form button:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(138, 121, 171, 0.4);
+}
+
+/* Unified Form Elements */
+input, textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-main);
+  padding: 14px;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(138, 121, 171, 0.1);
+}
+
+/* ===============================
+   4. SECTION SPECIFIC LAYOUTS
+================================= */
+
+/* Contact Section Grid */
+.contact-section {
+  background: var(--grad-surface);
+  padding: 100px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+
+/* Connect Section Grid */
+.connect-section {
+  background: var(--bg-darker);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.icon-wrapper, .info-icon {
+  color: var(--primary-light);
+  margin-bottom: 20px;
+}
+
+/* Gallery & Video Grids */
+.gallery-grid, .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.gallery-grid img, .video-grid iframe {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+}
+
+.gallery-grid img:hover {
+  border-color: var(--primary-light);
+  transform: scale(1.03);
+}
+
+/* Testimonial Tweaks */
+.testimonial-review {
+  font-style: italic;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   5. RESPONSIVE UTILITIES
+================================= */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2 {
+    font-size: 32px;
+  }
+  
+  .container {
+    width: 92%;
+  }
+}
+
+.success-message {
+  background: rgba(0, 255, 150, 0.1);
+  border: 1px solid rgba(0, 255, 150, 0.3);
+  padding: 15px;
+  color: #00ff96;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: clamp(40px, 8vw, 72px); /* Larger size for big impact */
+  font-weight: 800; /* Extra bold */
+  text-transform: uppercase;
+  letter-spacing: -1px; /* Tighter spacing for a modern, "Stage" look */
+  line-height: 1.1;
+  background: linear-gradient(180deg, #ffffff 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

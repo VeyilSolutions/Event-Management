@@ -1,0 +1,60 @@
+/* ===============================
+   HOME.CSS - FIXED DIVIDER
+================================= */
+
+/* 1. CONTAINER
+   Setting a solid background color here hides any 
+   underlying global patterns or "dark holes".
+================================= */
+.section-divider-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Zero padding as requested */
+  background-color: var(--primary); /* Fills the left/right gaps */
+}
+
+/* 2. THE GLOWING LINE
+   Adjusted to use low-opacity color at the ends 
+   instead of pure transparency.
+================================= */
+.section-line {
+  width: 70%;
+  max-width: 1100px;
+  height: 1px;
+  position: relative;
+  
+  /* Use a faint version of your primary color at the ends 
+     to keep the line visible across the dark background. */
+  background: linear-gradient(
+    90deg, 
+    rgba(138, 121, 171, 0.05) 0%,   /* Faint start */
+    var(--primary-light) 50%,       /* Bright center */
+    rgba(138, 121, 171, 0.05) 100%  /* Faint end */
+  );
+
+  /* Shadow/Glow effect from your design system */
+  box-shadow: 0px 0px 12px var(--primary);
+  opacity: 0.7; 
+}
+
+/* 3. SOFT BACKGROUND GLOW 
+   Adds that extra depth seen in your reference images.
+*/
+.section-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 20px;
+  background: radial-gradient(
+    circle, 
+    rgba(138, 121, 171, 0.1) 0%, 
+    transparent 80%
+  );
+  filter: blur(8px);
+  z-index: -1;
+}

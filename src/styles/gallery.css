@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your other global styles can go below here */
+:root {
+  /* Core Palette */
+  --bg-dark: #0f0f14;
+  --bg-darker: #0b0b0f;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+  
+  /* Brand Colors */
+  --primary: #8a79ab;
+  --primary-light: #c8b6ff;
+  --primary-hover: #7666a0;
+  
+  /* Text Colors */
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  
+  /* Accents & Utilities */
+  --grad-main: linear-gradient(90deg, var(--primary), var(--primary-light));
+  --grad-surface: radial-gradient(circle at top right, #1c1c2e, #0f0f14);
+  --radius: 16px;
+  --transition: all 0.3s ease;
+  --shadow-glow: 0 10px 25px rgba(138, 121, 171, 0.2);
+}/* ===============================
+   FILTER BUTTONS
+================================= */
+.filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filters button {
+  margin: 10px;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+/* Hover */
+.filters button:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Active Filter */
+.filters button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ===============================
+   IMAGE GRID
+================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Gallery Images */
+.gallery-grid img {
+  width: 100%;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* ===============================
+   VIDEO GRID
+================================= */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  transition: var(--transition);
+}
+
+.video-grid iframe:hover {
+  transform: scale(1.02);
+}

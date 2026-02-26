@@ -1,0 +1,113 @@
+/* ===============================
+   4. CONNECT SECTION (Fixed & Unified)
+================================= */
+.connect-section {
+  padding: 80px 20px;
+  background: var(--bg-darker);
+  text-align: center;
+}
+
+.connect-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.connect-grid {
+  display: grid;
+  /* Optimized for 6 items: 3 per row on desktop, 2 on tablet */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.connect-card {
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers all content horizontally */
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.connect-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-8px);
+  border-color: var(--primary-light);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.icon-wrapper {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.connect-card h3 {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.connect-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.connect-action {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: gap 0.2s ease;
+}
+
+.connect-card:hover .connect-action {
+  gap: 12px; /* Smooth arrow slide */
+}
+
+/* ===============================
+   5. RESPONSIVE DESIGN (Fixed)
+================================= */
+@media (max-width: 1024px) {
+  .connect-grid {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .connect-section {
+    padding: 50px 15px;
+  }
+
+  .connect-grid {
+    grid-template-columns: 1fr; /* Stack on mobile for better readability */
+    gap: 20px;
+  }
+
+  .connect-card {
+    padding: 30px 20px;
+  }
+  
+  .connect-card p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+}

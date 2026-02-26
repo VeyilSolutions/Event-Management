@@ -1,0 +1,120 @@
+/* Navbar Container */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 15, 20, 0.85); /* Matches footer base color */
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 80px; /* Slightly taller for a more premium feel */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: #3b82f6; /* Signature blue from your footer neon */
+  margin-left: 2px;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-item:hover, 
+.nav-item.active {
+  color: #ffffff;
+}
+
+/* Underline effect */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-item:hover::after, 
+.nav-item.active::after {
+  width: 100%;
+}
+
+/* Action Button */
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px; /* Slightly sharper corners for the Veyil look */
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  color: #0f0f14;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar-links, .navbar-actions {
+    display: none; /* Consider adding a hamburger menu here later */
+  }
+  .navbar-container {
+    height: 70px;
+  }
+  .logo-text {
+    font-size: 18px;
+  }
+}

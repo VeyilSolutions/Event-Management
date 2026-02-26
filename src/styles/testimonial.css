@@ -1,0 +1,97 @@
+/* ===============================
+   TESTIMONIAL SECTION
+================================= */
+.testimonial-section {
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.testimonial-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px; /* Reduced side padding */
+}
+
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Slider Controls */
+.testimonial-slider {
+  padding: 10px 0 40px;
+  cursor: grab;
+}
+
+.testimonial-slider:active {
+  cursor: grabbing;
+}
+
+.testimonial-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Content - No Hover Effects */
+.testimonial-content {
+  width: 100%;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  min-height: 280px; /* Slightly shorter */
+  justify-content: space-between;
+  /* Hover transition removed for a static feel */
+}
+
+.testimonial-review {
+  font-size: 0.95rem; /* Slightly smaller text */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+/* User Info */
+.testimonial-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 50px; /* Slightly smaller avatar */
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-light);
+  object-fit: cover;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.user-info span {
+  font-size: 11px;
+  color: var(--primary-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 480px) {
+  .testimonial-container {
+    padding: 0 10px; /* Minimal padding on tiny screens */
+  }
+}
